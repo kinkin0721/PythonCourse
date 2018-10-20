@@ -1,6 +1,18 @@
 # -*- coding: utf-8 -*-
 
 
+def sqr(n):
+    return n * n
+
+
+def lis_range(n):
+    l = list()
+    for i in range(5):
+        l.append(i+1)
+
+    return l
+
+
 def fibonacci(n):
     if n == 0:
         print(0)
@@ -82,17 +94,27 @@ if __name__ == "__main__":
     #     count = count + 1
     #     print(count)
 
-    numList = [2, 3, 4, 5, 7, 9, 10, 100]
+    # numList = [2, 3, 4, 5, 7, 9, 10, 100]
+    #
+    # # find2(90)
+    #
+    # fibonacci(8)
+    #
+    # d = {'apple': 3, 'banana': 10, 'pineapple': 7}
+    #
+    # print(numList)
 
-    # find2(90)
+    # for i in range(5):
+    #     if i == 3:
+    #         break
+    #     print(i)
 
-    fibonacci(8)
+    # for i in range(5):
+    #     if i == 3:
+    #         continue
+    #     print(i)
 
-    d = {'apple': 3, 'banana': 10, 'pineapple': 7}
-
-    print(numList)
-
-
+    print(sqr(2))
 
 
 
