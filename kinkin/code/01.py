@@ -1,16 +1,9 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 
 def sqr(n):
     return n * n
-
-
-def lis_range(n):
-    l = list()
-    for i in range(5):
-        l.append(i+1)
-
-    return l
 
 
 def fibonacci(n):
