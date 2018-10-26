@@ -77,8 +77,8 @@ def play_with_single_player_mode():
             continue
 
         if not check_guess(answer, guess):
-            count_a = get_right_number_count(answer, guess)
-            count_b = get_right_number_and_position_count(answer, guess)
+            count_a = get_right_number_and_position_count(answer, guess)
+            count_b = get_right_number_count(answer, guess)
             print(str(count_a) + 'A' + str(count_b) + 'B')
         else:
             print("猜对啦！")
