@@ -6,15 +6,26 @@ import random
 
 # 随机生成一个每一位各不相同的4位数，作为谜底
 def make_answer():
+    # 做成一个包含数字0-9的列表[0,1,2,3,4,5,6,7,8,9]
     numbers = list()
     for i in range(10):
         numbers.append(i)
 
     answer = ""
     for i in range(4):
-        rand_index = random.randint(0, len(numbers)-1)
-        answer += str(numbers[rand_index])
-        numbers.remove(numbers[rand_index])
+        # 方法一：
+        # 随机一个列表索引，取出索引对应的列表中的数字
+        # rand_index = random.randint(0, len(numbers)-1)
+        # answer += str(numbers[rand_index])
+        # 删除已经被用掉的数字
+        # numbers.remove(numbers[rand_index])
+
+        # 方法二：
+        # 从列表中随机选取一个数字
+        rand_num = random.choice(numbers)
+        answer += str(rand_num)
+        # 删除已经被用掉的数字
+        numbers.remove(rand_num)
 
     return answer
 
@@ -25,7 +36,7 @@ def check_guess(answer, guess):
 
 
 # 计算玩家猜对的数字的个数（不需要检查位置）
-# 不用set
+# 方法一：不用set
 def get_right_number_count(answer, guess):
     count = 0
     for num in guess:
@@ -33,7 +44,7 @@ def get_right_number_count(answer, guess):
             count += 1
 
     return count
-# 使用set
+# 方法二：使用set
 # def get_right_number_count(answer, guess):
 #     answer_set = set(answer)
 #     guess_set = set(guess)
@@ -56,10 +67,16 @@ def is_guess_legal(guess):
         print("请输入4位数")
         return False
 
-    for s in guess:
-        if ord(s) < 48 or ord(s) > 57:
-            print("请不要输入数字以外的字符！")
-            return False
+    # 方法一：用ascii码判断是否为数字
+    # for s in guess:
+    #     if ord(s) < 48 or ord(s) > 57:
+    #         print("请不要输入数字以外的字符！")
+    #         return False
+
+    # 方法二：用python自带str类函数判断是否为数字
+    if not guess.isdigit():
+        print("请不要输入数字以外的字符！")
+        return False
 
     if len(set(guess)) != len(guess):
         print("请不要输入重复数字！")
@@ -123,6 +140,8 @@ if __name__ == "__main__":
         play_with_single_player_mode()
     elif play_mode == 2:
         play_with_multiplayer_mode()
+
+
 
 
 
