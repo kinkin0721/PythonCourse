@@ -8,7 +8,7 @@ import random
 def make_answer():
     # 做成一个包含数字0-9的列表[0,1,2,3,4,5,6,7,8,9]
     numbers = list()
-    for i in range(10):
+    for i in range(1, 10):
         numbers.append(i)
 
     answer = ""
@@ -27,11 +27,14 @@ def make_answer():
         # 删除已经被用掉的数字
         numbers.remove(rand_num)
 
+        if i == 0:
+            numbers.append(0)
+
     return answer
 
 
 # 检查玩家的猜测是否正确
-def check_guess(answer, guess):
+def is_correct_answer(answer, guess):
     return answer == guess
 
 
@@ -86,7 +89,7 @@ def is_guess_legal(guess):
 
 
 def play_with_single_player_mode():
-    print("开始多人模式")
+    print("开始单人模式")
     guess_limit = int(input("请输入可猜次数："))
     answer = make_answer()
     print("猜数字小游戏开始啦!答案为一个没有重复数字4位数")
@@ -97,7 +100,7 @@ def play_with_single_player_mode():
         if not is_guess_legal(guess):
             continue
 
-        if not check_guess(answer, guess):
+        if not is_correct_answer(answer, guess):
             count_a = get_right_number_and_position_count(answer, guess)
             count_b = get_right_number_count(answer, guess)
             print(str(count_a) + 'A' + str(count_b) + 'B')
@@ -112,7 +115,7 @@ def play_with_single_player_mode():
 
 
 def play_with_multiplayer_mode():
-    print("开始单人模式")
+    print("开始多人模式")
     player_count = int(input("请输入玩家人数："))
     answer = make_answer()
     print("猜数字小游戏开始啦!答案为一个没有重复数字4位数")
@@ -124,14 +127,14 @@ def play_with_multiplayer_mode():
             while not is_guess_legal(guess):
                 guess = input("Player" + str(i+1) + "请输入你的猜测：")
 
-            if not check_guess(answer, guess):
+            if not is_correct_answer(answer, guess):
                 count_a = get_right_number_count(answer, guess)
                 count_b = get_right_number_and_position_count(answer, guess)
                 print(str(count_a) + 'A' + str(count_b) + 'B')
             else:
                 print("猜对啦！本局的胜者是：Player" + str(i+1))
                 return
-
+ 
 
 if __name__ == "__main__":
     print("请选择游玩模式。单人模式输入1，多人模式输入2")
