@@ -12,6 +12,11 @@
 
 ### Demo
 
+批量合成盲水印图
+
+    python bwm_new.py encode --path /Users/kinkin/img/ wm.png
+    
+    
 合成盲水印图
 
     python bwm.py encode hui.png wm.png hui_with_wm.png
