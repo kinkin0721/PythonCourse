@@ -272,18 +272,46 @@ if __name__ == "__main__":
     # a.append(5)
     # print(a)
 
-    a = []
+    # a = []
+    #
+    # for i in range(5):
+    #     a.append(i + 1)
+    # print(a)
+    #
+    # def my_range(n):
+    #     idx = list()
+    #     count = 0
+    #     while count < n:
+    #         idx.append(count)
+    #         count += 2
+    #
+    #     return idx
 
-    for i in range(5):
-        a.append(i + 1)
-    print(a)
+    # ～～～～～～～～～～～～～～～～～～～～2018年11月17日～～～～～～～～～～～～～～～～～～～～
 
-    def my_range(n):
-        idx = list()
-        count = 0
-        while count < n:
-            idx.append(count)
-            count += 2
+    # l = [1, 1, 6, 3, 1, 5, 2]
+    # l2 = list(set(l))
+    # print(l2)
 
-        return idx
+    # l2 = []
+    # l = [1, 1, 6, 3, 1, 5, 2]
+    # for letter in l:
+    #     if letter not in l2:
+    #         l2.append(letter)
+    # print(l2)
+
+    # l1 = [2, 3, 8]
+    # l2 = [5, 6, 10]
+    # l3 = list(set(l1) | set(l2))
+    # print(l3)
+
+    # l1 = [2, 3, 8]
+    # l2 = [5, 6, 10]
+    # l3 = l1 + l2
+    # print(l3)
+
+    # l1 = [2, 3, 8]
+    # l2 = [5, 6, 10]
+    # l3 = l2.extend(l1)
+    # print(l3)
 
