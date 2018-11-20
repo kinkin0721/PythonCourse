@@ -79,6 +79,7 @@ def is_guess_legal(guess):
         return False
 
     if len(set(guess)) != len(guess):
+        # 去重复
         print("请不要输入重复数字！")
         return False
 
@@ -86,7 +87,7 @@ def is_guess_legal(guess):
 
 
 def play_with_single_player_mode():
-    print("开始多人模式")
+    print("开始单人模式")
     guess_limit = int(input("请输入可猜次数："))
     answer = make_answer()
     print("猜数字小游戏开始啦!答案为一个没有重复数字4位数")
@@ -112,7 +113,7 @@ def play_with_single_player_mode():
 
 
 def play_with_multiplayer_mode():
-    print("开始单人模式")
+    print("开始多人模式")
     player_count = int(input("请输入玩家人数："))
     answer = make_answer()
     print("猜数字小游戏开始啦!答案为一个没有重复数字4位数")
