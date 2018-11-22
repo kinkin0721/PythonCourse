@@ -82,6 +82,7 @@ def is_guess_legal(guess):
         return False
 
     if len(set(guess)) != len(guess):
+        # 去重复
         print("请不要输入重复数字！")
         return False
 
