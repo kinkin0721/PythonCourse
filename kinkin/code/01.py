@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-s
 
 
 def sqr(n):
@@ -43,6 +43,28 @@ def find2(n):
         print("meiyounameduo2 godie")
     else:
         print(count)
+
+
+def factorization(n):
+    cycle = True
+    result = ""
+    num = n
+
+    while cycle:
+        if n == 1:
+            break
+        for i in range(2, n + 1):
+            if i == n:
+                cycle = False
+                result += str(n)
+                break
+
+            if n % i == 0:
+                result += str(i) + "*"
+                n = int(n / i)
+                break
+
+    print(str(num) + "=" + result)
 
 
 if __name__ == "__main__":
@@ -107,7 +129,20 @@ if __name__ == "__main__":
     #         continue
     #     print(i)
 
-    print(sqr(2))
+    # print(sqr(2))
+
+    # homework-1
+    # a = 2
+    # n = 5
+    #
+    # i = 0
+    # sum = 0
+    # while n > 0:
+    #     sum = sum + n * a * 10 ** i
+    #     n = n - 1
+    #     i = i + 1
+    #
+    # print(sum)
 
 
 

@@ -9,9 +9,12 @@ class Student:
         self.chinese = int(_chinese)
         self.math = int(_math)
         self.english = int(_english)
-
+  
     def avage(self):
         return (self.chinese + self.math + self.english) / 3
+
+    def sum(self):
+        return self.chinese + self.math + self.english
 
 
 def get_students_data(path):
@@ -25,9 +28,26 @@ def get_students_data(path):
     return students
 
 
+def max(students_dict, course):
+    max = 0
+    zuigaofen_tongxue = 0
+    if course == 'chinese':
+        for key in students_dict:
+            s = students_dict[key]
+            if s.chinese > max:
+                max = s.chinese
+                zuigaofen_tongxue = s.id
+
+    return zuigaofen_tongxue
+
+
 if __name__ == "__main__":
     students_dict = get_students_data('student.txt')
 
     for key in students_dict:
-        student = students_dict[key]
-        print('{}的平均分: {}'.format(student.name, student.avage()))
+        s = students_dict[key]
+        print('{}的平均分: {}'.format(s.name, s.avage()))
+
+    students_dict[1].name
+
+
