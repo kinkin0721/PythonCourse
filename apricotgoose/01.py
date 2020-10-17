@@ -4,31 +4,32 @@
 #     else:
 #         print(str(year) + "is not leap year")
 
+
 def fibonacci(n):
+    arr = []
 
     n1 = 0
     n2 = 1
     count = 1
 
     if n == 0:
-        print(0)
-
+        return arr
     elif n == 1:
-        print(1)
-
+        arr.append(1)
+        return arr
     else:
+        arr.append(1)
         while count < n:
             nth = n1 + n2
+            arr.append(nth)
             n1 = n2
             n2 = nth
             count += 1
-        print(nth)
-
-
+        return arr
 
 
 if __name__ == "__main__":
-    print("Hello world!")
+    # print("Hello world!")
 
     # count = 6
     #
@@ -167,7 +168,23 @@ if __name__ == "__main__":
 #
 #     is_leap_year(2018)
 
-    fibonacci(5)
-
-
-
+    print(fibonacci(5))
+#
+#
+# arr = []
+# for index in range(5):
+#     arr.append(index + 1)
+#     print(arr)
+#
+# arr = [1, 2, 4, 7, 2, 8, 2, 0, 2, 2, 10]
+# while 2 in arr:
+#     arr.remove(2)
+#
+# print(arr)
+#
+# a = [1, 2, 3, 7, 10, 4]
+# sum = 0
+# for number in a:
+#     sum = (sum + number)
+#
+# print(sum)
