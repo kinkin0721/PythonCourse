@@ -8,17 +8,18 @@ if __name__ == "__main__":
     # 倒入敏感词txt
     minGanCi_txt = open('filtered_words.txt')
     minGanCi_str = minGanCi_txt.read()
+    minGanCi_txt.close()
     minGanCi_list = minGanCi_str.split()
 
     # 判断敏感词在文本里吗
-    for index in range(len(minGanCi_list)):
-        if minGanCi_list[index] in shuRu_str:
+    for minganci in minGanCi_list:
+        if minganci in shuRu_str:
             # 该敏感词文本长度
-            starsNumber = len(minGanCi_list[index])
+            starsNumber = len(minganci)
             # 输出几个*号
             starsWord = '*' * starsNumber
             # 用*号替换敏感词
-            shuRu_str = shuRu_str.replace(minGanCi_list[index], starsWord)
+            shuRu_str = shuRu_str.replace(minganci, starsWord)
 
     print(shuRu_str)
 

@@ -11,17 +11,15 @@ if __name__ == "__main__":
     allFileName = os.listdir(path)
 
     # for循环，每一txt，加在一起生成list，并删除
-    count = 0
-    n = 0
     result = []
-    for index in allFileName:
-        fileName = path + str(allFileName[n])
+    book_str = ''
+    for fillname in allFileName:
+        fileName = path + fillname
         book = open(fileName)
         bookRead = book.read()
         result.append(bookRead)
+        book_str += bookRead
         os.remove(fileName)
-        count += 1
-        n += 1
 
     resultBook = open('resultBook.txt', 'w')
     resultBook.write(''.join(result))
