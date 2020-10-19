@@ -4,14 +4,27 @@ import math
 
 
 def fuc1(a, n):
-    i = 0
+    # 方法1：
+    # i = 0
+    # sum = 0
+    # while n > 0:
+    #     sum = sum + a * 10 ** i * n
+    #     n = n - 1
+    #     i = i + 1
+
+    # 方法2：
     sum = 0
     while n > 0:
-        sum = sum + n * a * 10 ** i
+        m = n - 1
+        b = 0
+        while m >= 0:
+            b = b + a * 10 ** m
+            m = m - 1
         n = n - 1
-        i = i + 1
+        sum = sum + b
+        print("b = " + str(b))
 
-    print(sum)
+    print("sum = " + str(sum))
 
 
 def fibonacci(n):
@@ -34,15 +47,15 @@ def fibonacci(n):
 
 
 def narcissistic_number():
-    cur = 100
-    end = 1000
-    while cur < end:
-        i = cur // 100
-        j = cur // 10 % 10
-        k = cur % 10
-        if cur == i ** 3 + j ** 3 + k ** 3:
-            print(cur)
-        cur += 1
+    n = 100
+    # end = 1000
+    while n < 1000:
+        i = n // 100
+        j = n // 10 % 10
+        k = n % 10
+        if n == i ** 3 + j ** 3 + k ** 3:
+            print(n)
+        n += 1
 
 
 def day_of_year(year, month, day):
@@ -127,5 +140,5 @@ if __name__ == "__main__":
     # n = int(input("请输入数字："))
     # is_prime_number(n)
 
-    n = int(input("请输入奇数："))
-    fuc2(n)
+    # n = int(input("请输入奇数："))
+    # fuc2(n)
