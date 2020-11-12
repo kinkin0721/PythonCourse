@@ -2,11 +2,11 @@
 
 def factorization(n):
     cycle = True
-    result = ""
-    num = n
+    result = str(n) + " = "
 
     while cycle:
         if n == 1:
+            result += str(n)
             break
         for i in range(2, n + 1):
             if i == n:
@@ -15,11 +15,11 @@ def factorization(n):
                 break
 
             if n % i == 0:
-                result += str(i) + "*"
+                result += str(i) + " * "
                 n = int(n / i)
                 break
 
-    print(str(num) + "=" + result)
+    return result
 
 
 def is_palindrome_number(n):
@@ -107,8 +107,8 @@ def contains_substr(str):
 if __name__ == "__main__":
     print("Hello world!")
 
-    # n = int(input("请输入数字："))
-    # factorization(n)
+    n = int(input("请输入数字："))
+    print(factorization(n))
 
     # n = int(input("请输入数字："))
     # if is_palindrome_number(n):
