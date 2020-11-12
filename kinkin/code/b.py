@@ -1,4 +1,4 @@
-import a
+# import a
 
 print("name=" + __name__)
 print("我是b.py")
@@ -22,7 +22,6 @@ if __name__ == "__main__":
     c = 3
     d = sqr(3)
     e = sqr(c)
-
     print("c = {}, d = {}, e = {}".format(c, d, e))
 
 
