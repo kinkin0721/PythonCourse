@@ -107,8 +107,8 @@ def contains_substr(str):
 if __name__ == "__main__":
     print("Hello world!")
 
-    n = int(input("请输入数字："))
-    print(factorization(n))
+    # n = int(input("请输入数字："))
+    # print(factorization(n))
 
     # n = int(input("请输入数字："))
     # if is_palindrome_number(n):
@@ -124,4 +124,4 @@ if __name__ == "__main__":
     # n = int(input("请输入数字："))
     # age(n)
 
-    # print(get_list_sum())
+    print(get_list_sum())
