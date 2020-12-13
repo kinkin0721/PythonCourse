@@ -1,12 +1,27 @@
 # -*- coding: utf-8 -*-s
 
 def sort(l):
-    for i in range(0, len(l) - 1):
+    for i in range(len(l) - 1):
         for j in range(i + 1, len(l)):
             if l[i] > l[j]:
                 temp = l[i]
                 l[i] = l[j]
                 l[j] = temp
+    return l
+
+
+def sort2(l):
+    for i in range(1, len(l)):
+        value = l[i]
+        j = i - 1
+        while j >= 0:
+            if l[j] > value:
+                l[j + 1] = l[j]
+                l[j] = value
+                j -= 1
+            else:
+                break
+
     return l
 
 
@@ -90,8 +105,9 @@ def exercise6(l):
 if __name__ == "__main__":
     print("Hello world!")
 
-    # a = [1, 7, 4, 89, 34, 2, 100, 0]
+    a = [1, 7, 4, 89, 34, 2, 100, 0]
     # print(sort(a))
+    print(sort2(a))
 
     # print(factorial(4))
 

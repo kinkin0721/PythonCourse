@@ -74,19 +74,19 @@
 #         if tongji[zimu] > tongji[zuidapinlv]:
 #             zuidapinlv = zimu
 #     return zuidapinlv
-#
-#
+
+
 # print(frk())
 
 
-l = [1, 2, 3, 4, 4, 4, 4, 4, 4, 5, 4, 4, 6, 6, 8, 8, 12, 12, 13]
-def quchu():
-    newl = []
-    for idx in range(len(l)):
-        if l[idx] != l[idx - 1]:
-           newl.append(l[idx])
-        else:
-            continue
-    return newl
-
-print(quchu())
+# l = [1, 2, 3, 4, 4, 4, 4, 4, 4, 5, 4, 4, 6, 6, 8, 8, 12, 12, 13]
+# def quchu():
+#     newl = []
+#     for idx in range(len(l)):
+#         if l[idx] != l[idx - 1]:
+#            newl.append(l[idx])
+#         else:
+#             continue
+#     return newl
+#
+# print(quchu())
